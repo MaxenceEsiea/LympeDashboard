@@ -10,18 +10,21 @@ export class StatsProgressBarService extends StatsProgressBarData {
       value: 572900,
       activeProgress: 70,
       description: 'Better than last week (70%)',
+      icon: 'euro-sign',
     },
     {
       title: 'New Orders',
       value: 6378,
       activeProgress: 30,
       description: 'Better than last week (30%)',
+      icon: 'shopping-cart',
     },
     {
       title: 'New Comments',
       value: 200,
       activeProgress: 55,
       description: 'Better than last week (55%)',
+      icon: 'comment',
     },
   ];
 

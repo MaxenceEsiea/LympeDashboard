@@ -5,6 +5,7 @@ export interface ProgressInfo {
   value: number;
   activeProgress: number;
   description: string;
+  icon: string;
 }
 
 export abstract class StatsProgressBarData {
