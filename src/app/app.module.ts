@@ -1,8 +1,3 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -20,7 +15,6 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-import {AppService} from './app.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,9 +34,6 @@ import {AppService} from './app.service';
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     CoreModule.forRoot(),
-  ],
-  providers: [
-    AppService,
   ],
   bootstrap: [AppComponent],
 })
