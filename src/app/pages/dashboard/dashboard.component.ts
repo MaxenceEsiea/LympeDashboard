@@ -12,7 +12,6 @@ import {ActivatedRoute} from '@angular/router';
 export class DashboardComponent implements OnDestroy, OnInit {
 
   private alive = true;
-  solarValue: number;
   appId: number;
   app: any;
   constructor(private themeService: NbThemeService,
