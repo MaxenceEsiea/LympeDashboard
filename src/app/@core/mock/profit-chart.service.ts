@@ -72,6 +72,11 @@ export class ProfitChartService extends ProfitChartData {
   }
 
   getProfitChartData(period: string): ProfitChart {
+    this.data = {
+      week: this.getDataForWeekPeriod(),
+      month: this.getDataForMonthPeriod(),
+      year: this.getDataForYearPeriod(),
+    };
     return this.data[period];
   }
 }

@@ -17,8 +17,9 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   private alive = true;
 
   chartPanelSummary: OrderProfitChartSummary[];
+  chartPanelSummary2: OrderProfitChartSummary[];
   period: string = 'week';
-  ordersChartData: OrdersChart;
+  ordersChartData: ProfitChart;
   profitChartData: ProfitChart;
 
   @ViewChild('ordersChart', { static: true }) ordersChart: OrdersChartComponent;
@@ -29,6 +30,12 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
       .pipe(takeWhile(() => this.alive))
       .subscribe((summary) => {
         this.chartPanelSummary = summary;
+      });
+
+    this.ordersProfitChartService.getOrderProfitChartSummary2()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe((summary) => {
+        this.chartPanelSummary2 = summary;
       });
 
     this.getOrdersChartData(this.period);
@@ -53,10 +60,10 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   }
 
   getOrdersChartData(period: string) {
-    this.ordersProfitChartService.getOrdersChartData(period)
+    this.ordersProfitChartService.getProfitChartData(period)
       .pipe(takeWhile(() => this.alive))
-      .subscribe(ordersChartData => {
-        this.ordersChartData = ordersChartData;
+      .subscribe(profitChartData => {
+        this.ordersChartData = profitChartData;
       });
   }
 
