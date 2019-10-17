@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
     <div class="summary-container">
       <div *ngFor="let item of summary">
         <div>{{ item.title }}</div>
-        <div class="h6">{{ item.value }}</div>
+        <div class="h6">{{ item.value }} €</div>
       </div>
     </div>
   `,
