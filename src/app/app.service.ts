@@ -30,4 +30,8 @@ export class AppService {
   public getDownloads(): Observable<any> {
     return this.http.get(this.api_url + '/apps/downloads');
   }
+
+  public getProgressData(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/progress');
+  }
 }
