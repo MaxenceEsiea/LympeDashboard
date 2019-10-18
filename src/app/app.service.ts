@@ -18,4 +18,16 @@ export class AppService {
   public getAppById(id: number): Observable<any> {
     return this.http.get(this.api_url + '/apps/find/' + id);
   }
+
+  public getReviewsByAppId(id: number): Observable<any> {
+    return this.http.get(this.api_url + '/apps/reviews/' + id);
+  }
+
+  public getDownloadsByAppId(id: number): Observable<any> {
+    return this.http.get(this.api_url + '/apps/downloads/' + id);
+  }
+
+  public getDownloads(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/downloads');
+  }
 }
