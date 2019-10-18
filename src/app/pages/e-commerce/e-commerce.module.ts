@@ -111,6 +111,9 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
   ],
   exports: [
     ECommerceChartsPanelComponent,
+    ECommerceComponent,
+    ECommerceVisitorsAnalyticsComponent,
+    ECommerceProgressSectionComponent,
   ],
 })
 export class ECommerceModule { }
