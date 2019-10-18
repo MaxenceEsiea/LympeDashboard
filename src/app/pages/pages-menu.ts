@@ -17,15 +17,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Downloads',
-        link: '/pages/forms/inputs',
+        link: '/pages/downloads',
       },
       {
         title: 'Money',
-        link: '/pages/forms/layouts',
+        link: '/pages/money',
       },
       {
         title: 'Reviews',
-        link: '/pages/forms/buttons',
+        link: '/pages/reviews',
       },
     ],
   },

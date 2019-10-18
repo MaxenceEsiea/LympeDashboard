@@ -23,7 +23,7 @@ export class DashboardComponent implements OnDestroy, OnInit {
     this.route.params.subscribe(params => {
       this.appId = +params.id;
       this.appService.getAppById(this.appId).subscribe(app => {
-        this.app = app[0];
+        this.app = app;
       });
     });
   }
