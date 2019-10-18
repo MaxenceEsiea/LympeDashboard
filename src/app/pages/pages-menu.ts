@@ -32,23 +32,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Applications',
     icon: 'keypad-outline',
-    children: [
-      {
-        title: 'Fortnite Dances',
-        link: '/pages/layout/stepper',
-      },
-      {
-        title: 'Verre',
-        link: '/pages/layout/list',
-      },
-      {
-        title: 'Moquette',
-        link: '/pages/layout/infinite-list',
-      },
-      {
-        title: 'Clown',
-        link: '/pages/layout/accordion',
-      },
-    ],
+    children: [],
   },
 ];

@@ -1,0 +1,21 @@
+import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AppService {
+
+  public api_url = 'https://api.lympestudio.com';
+
+  constructor(private http: HttpClient) { }
+
+  public getApps(): Observable<any> {
+    return this.http.get(this.api_url + '/apps');
+  }
+
+  public getAppById(id: number): Observable<any> {
+    return this.http.get(this.api_url + '/apps/find/' + id);
+  }
+}

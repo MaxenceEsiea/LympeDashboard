@@ -9,7 +9,7 @@ export class OrdersProfitChartService extends OrdersProfitChartData {
 
   private summary = [
     {
-      title: 'Marketplace',
+      title: 'Last Year',
       value: 3654,
     },
     {
@@ -26,6 +26,25 @@ export class OrdersProfitChartService extends OrdersProfitChartData {
     },
   ];
 
+  private summary2 = [
+    {
+      title: 'Last Year',
+      value: 4904,
+    },
+    {
+      title: 'Last Month',
+      value: 768,
+    },
+    {
+      title: 'Last Week',
+      value: 590,
+    },
+    {
+      title: 'Today',
+      value: 169,
+    },
+  ];
+
   constructor(private ordersChartService: OrdersChartData,
               private profitChartService: ProfitChartData) {
     super();
@@ -33,6 +52,10 @@ export class OrdersProfitChartService extends OrdersProfitChartData {
 
   getOrderProfitChartSummary(): Observable<OrderProfitChartSummary[]> {
     return observableOf(this.summary);
+  }
+
+  getOrderProfitChartSummary2(): Observable<OrderProfitChartSummary[]> {
+    return observableOf(this.summary2);
   }
 
   getOrdersChartData(period: string): Observable<OrdersChart> {
