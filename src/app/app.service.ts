@@ -7,13 +7,15 @@ import {Observable} from 'rxjs';
 })
 export class AppService {
 
+  public api_url = 'https://api.lympestudio.com';
+
   constructor(private http: HttpClient) { }
 
   public getApps(): Observable<any> {
-    return this.http.get('https://www.lympestudio.com/getApps.php');
+    return this.http.get(this.api_url + '/apps');
   }
 
   public getAppById(id: number): Observable<any> {
-    return this.http.get('https://www.lympestudio.com/getAppById.php?id=' + id);
+    return this.http.get(this.api_url + '/apps/find/' + id);
   }
 }
