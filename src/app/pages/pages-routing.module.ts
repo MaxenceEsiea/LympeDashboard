@@ -5,9 +5,9 @@ import { PagesComponent } from './pages.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {DownloadsComponent} from './dashboard/downloads/downloads.component';
-import {MoneyComponent} from './dashboard/money/money.component';
-import {ReviewsComponent} from './dashboard/reviews/reviews.component';
+import {DownloadsComponent} from './downloads/downloads.component';
+import {MoneyComponent} from './money/money.component';
+import {ReviewsComponent} from './reviews/reviews.component';
 
 const routes: Routes = [{
   path: '',

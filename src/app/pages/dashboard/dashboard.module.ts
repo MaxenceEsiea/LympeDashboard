@@ -31,9 +31,9 @@ import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 import { FormsModule } from '@angular/forms';
 import {ECommerceModule} from '../e-commerce/e-commerce.module';
-import { DownloadsComponent } from './downloads/downloads.component';
-import { MoneyComponent } from './money/money.component';
-import { ReviewsComponent } from './reviews/reviews.component';
+import { DownloadsComponent } from '../downloads/downloads.component';
+import { MoneyComponent } from '../money/money.component';
+import { ReviewsComponent } from '../reviews/reviews.component';
 
 @NgModule({
   imports: [
