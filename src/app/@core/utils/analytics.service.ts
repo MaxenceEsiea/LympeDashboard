@@ -23,10 +23,4 @@ export class AnalyticsService {
         });
     }
   }
-
-  trackEvent(eventName: string) {
-    if (this.enabled) {
-      ga('send', 'event', eventName);
-    }
-  }
 }

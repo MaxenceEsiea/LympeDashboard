@@ -3,10 +3,9 @@ import { NbMenuModule } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
+import { GamesModule } from './games/games.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
-import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 
 
 @NgModule({
@@ -14,9 +13,8 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
     PagesRoutingModule,
     ThemeModule,
     NbMenuModule,
+    GamesModule,
     DashboardModule,
-    ECommerceModule,
-    MiscellaneousModule,
   ],
   declarations: [
     PagesComponent,
@@ -24,3 +22,4 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 })
 export class PagesModule {
 }
+
