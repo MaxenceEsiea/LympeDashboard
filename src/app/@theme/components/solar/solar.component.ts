@@ -9,7 +9,7 @@ declare const echarts: any;
   styleUrls: ['./solar.component.scss'],
   template: `
     <nb-card size="tiny" class="solar-card">
-      <nb-card-header>Solar Energy Consumption</nb-card-header>
+      <nb-card-header>{{ title }}</nb-card-header>
       <nb-card-body>
         <div echarts [options]="option" class="echart">
         </div>
@@ -24,6 +24,8 @@ declare const echarts: any;
 export class SolarComponent implements AfterViewInit, OnDestroy {
 
   private value = 0;
+
+  @Input('title') title;
 
   @Input('chartValue')
   set chartValue(value: number) {

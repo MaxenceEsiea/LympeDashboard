@@ -1,34 +1,36 @@
-<div class="row">
-  <div class="col-xxxl-3 col-md-6">
-  </div>
-</div>
-
-<div class="row">
-  <div class=" col-md-6">
-    <ngx-kitten *ngIf="app" [app]="app"></ngx-kitten>
+<div *ngIf="app">
+  <div class="row">
+    <div class="col-xxxl-3 col-md-6">
+    </div>
   </div>
 
-  <div class="col-md-6">
-    <ngx-solar></ngx-solar>
-    <ngx-solar></ngx-solar>
-  </div>
-</div>
+  <div class="row">
+    <div class=" col-md-6">
+      <ngx-kitten [app]="app"></ngx-kitten>
+    </div>
 
-<div class="row">
-  <div class="col-xxxl-9 col-xl-12">
-    <ngx-ecommerce-charts></ngx-ecommerce-charts>
-  </div>
-
-  <div class="col-xxxl-9 col-xl-12">
-    <ngx-electricity></ngx-electricity>
+    <div class="col-md-6">
+      <ngx-solar [chartValue]="40" title="Note du jeux"></ngx-solar>
+      <ngx-solar [chartValue]="60" title="Note globale"></ngx-solar>
+    </div>
   </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-  </div>
+  <div class="row">
+    <div class="col-xxxl-9 col-xl-12">
+      <ngx-ecommerce-charts [appId]="appId"></ngx-ecommerce-charts>
+    </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-md-5">
-  </div>
+    <div class="col-xxxl-9 col-xl-12">
+      <ngx-electricity></ngx-electricity>
+    </div>
 
-  <div class="col-xxxl-6 col-xxl-12 col-md-7">
+    <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
+    </div>
+
+    <div class="col-xxxl-3 col-xxl-4 col-md-5">
+    </div>
+
+    <div class="col-xxxl-6 col-xxl-12 col-md-7">
+    </div>
   </div>
 </div>

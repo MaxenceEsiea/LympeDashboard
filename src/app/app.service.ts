@@ -27,6 +27,14 @@ export class AppService {
     return this.http.get(this.api_url + '/apps/downloads/' + id);
   }
 
+  public getSummary(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/summary');
+  }
+
+  public getSummaryByAppId(id: number): Observable<any> {
+    return this.http.get(this.api_url + '/apps/summary/' + id);
+  }
+
   public getDownloads(): Observable<any> {
     return this.http.get(this.api_url + '/apps/downloads');
   }

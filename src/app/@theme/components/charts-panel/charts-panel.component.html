@@ -1,6 +1,6 @@
-<nb-card size="large">
-  <nb-tabset fullWidth (changeTab)="changeTab($event)">
-    <nb-tab tabTitle="In-App Purchases">
+<nb-card size="large" *ngIf="chartPanelSummary && chartPanelSummary2">
+  <nb-tabset fullWidth>
+    <nb-tab tabTitle="In-App Purchases" [lazyLoad]="true">
       <div class="chart-container">
         <ngx-chart-panel-summary [summary]="chartPanelSummary"></ngx-chart-panel-summary>
         <ngx-chart-panel-header [type]="period"
