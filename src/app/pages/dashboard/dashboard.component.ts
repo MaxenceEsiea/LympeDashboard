@@ -1,34 +1,17 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
-import { SolarData } from '../../@core/data/solar';
-import {AppService} from '../../app.service';
-import {ActivatedRoute} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'ngx-dashboard',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'ngx-ecommerce',
   templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnDestroy, OnInit {
+export class DashboardComponent implements OnInit {
 
-  private alive = true;
-  appId: number;
-  app: any;
-  constructor(private themeService: NbThemeService,
-              private solarService: SolarData,
-              private appService: AppService,
-              private route: ActivatedRoute) {}
+  today: number = Date.now();
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.appId = +params.id;
-      this.appService.getAppById(this.appId).subscribe(app => {
-        this.app = app;
-      });
-    });
-  }
-
-  ngOnDestroy() {
-    this.alive = false;
+    setInterval(() => {
+      this.today = Date.now();
+    }, 1000);
   }
 }
