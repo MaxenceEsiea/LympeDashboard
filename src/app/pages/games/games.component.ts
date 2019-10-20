@@ -15,9 +15,6 @@ export class GamesComponent implements OnDestroy, OnInit {
   appId: number;
   app: any;
   totalRate = 0;
-  reviews = [];
-  downloads = [];
-
 
   constructor(private themeService: NbThemeService,
               private solarService: SolarData,
@@ -29,6 +26,9 @@ export class GamesComponent implements OnDestroy, OnInit {
       this.appId = +params.id;
       this.appService.getAppById(this.appId).subscribe(app => {
         this.app = app;
+        this.app.reviews.forEach(review => {
+          this.totalRate += review.rate;
+        });
       });
     });
   }
