@@ -121,22 +121,21 @@ export class AdMonetizationChartComponent implements AfterViewInit {
       ],
       series: [
         {
-          name: 'Others',
+          name: 'Google AdMob',
           type: 'bar',
-          barGap: 0,
           barWidth: '20%',
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
-                color: eTheme.firstLineGradFrom,
+                color: eTheme.thirdLineGradFrom,
               }, {
                 offset: 1,
-                color: eTheme.firstLineGradTo,
+                color: eTheme.thirdLineGradTo,
               }]),
             },
           },
-          data: this.chartData.data[0],
+          data: this.chartData.data[2],
         },
         {
           name: 'Unity Ads',
@@ -156,21 +155,22 @@ export class AdMonetizationChartComponent implements AfterViewInit {
           data: this.chartData.data[1],
         },
         {
-          name: 'Google AdMob',
+          name: 'Others',
           type: 'bar',
+          barGap: 0,
           barWidth: '20%',
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
-                color: eTheme.thirdLineGradFrom,
+                color: eTheme.firstLineGradFrom,
               }, {
                 offset: 1,
-                color: eTheme.thirdLineGradTo,
+                color: eTheme.firstLineGradTo,
               }]),
             },
           },
-          data: this.chartData.data[2],
+          data: this.chartData.data[0],
         },
       ],
     };
