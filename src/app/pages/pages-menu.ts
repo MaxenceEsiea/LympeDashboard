@@ -27,6 +27,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Reviews',
         link: '/pages/reviews',
       },
+      {
+        title: 'test templates',
+        link: '/pages/templates',
+      },
     ],
   },
   {
