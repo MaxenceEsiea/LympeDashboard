@@ -7,7 +7,6 @@ import {GamesComponent} from './games/games.component';
 import {DownloadsComponent} from './downloads/downloads.component';
 import {MoneyComponent} from './money/money.component';
 import {ReviewsComponent} from './reviews/reviews.component';
-import {TemplatesComponent} from './templates/templates.component';
 
 const routes: Routes = [{
   path: '',
@@ -20,10 +19,6 @@ const routes: Routes = [{
     {
       path: 'reviews',
       component: ReviewsComponent,
-    },
-    {
-      path: 'templates',
-      component: TemplatesComponent,
     },
     {
       path: 'downloads',

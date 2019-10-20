@@ -39,6 +39,10 @@ export class AppService {
     return this.http.get(this.api_url + '/apps/downloadsChart');
   }
 
+  public getMoneyChart(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/moneyChart');
+  }
+
   public getAdMonetization(): Observable<any> {
     return this.http.get(this.api_url + '/apps/adMonetization');
   }

@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
 import { NbThemeService } from '@nebular/theme';
 import {AppService} from '../../../app.service';
@@ -8,14 +8,20 @@ import {AppService} from '../../../app.service';
   styleUrls: ['./visitors-analytics.component.scss'],
   templateUrl: './visitors-analytics.component.html',
 })
-export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
+export class ECommerceVisitorsAnalyticsComponent implements OnDestroy, OnInit {
   private alive = true;
 
   chartLegend: {iconColor: string; title: string}[];
-  visitorsAnalyticsData: any;
+
+  @Input('chartData') chartData: any;
+  @Input('title') title: any;
+  @Input('subtitle') subtitle: any;
+  @Input('legends') legends: any[];
 
   constructor(private themeService: NbThemeService,
-              private appService: AppService) {
+              private appService: AppService) {}
+
+  ngOnInit(): void {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
@@ -23,7 +29,7 @@ export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
       });
 
     this.appService.getDownloadsChart().subscribe((datas) => {
-      this.visitorsAnalyticsData = datas;
+      this.chartData = datas;
     });
   }
 
@@ -31,11 +37,11 @@ export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
     this.chartLegend = [
       {
         iconColor: visitorsLegend.firstIcon,
-        title: 'Android',
+        title: this.legends[0],
       },
       {
         iconColor: visitorsLegend.secondIcon,
-        title: 'IOS',
+        title: this.legends[1],
       },
     ];
   }

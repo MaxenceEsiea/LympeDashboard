@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4">
       <ngx-review [appId]="appId" title="Total downloads" [value]="app.downloads"></ngx-review>
-      <ngx-review [appId]="appId" title="Today downloads" [value]="app.downloads"></ngx-review>
+      <ngx-review [appId]="appId" title="Today downloads" [value]="app.todayDownloads"></ngx-review>
     </div>
 
     <div class=" col-md-4">
@@ -11,17 +11,17 @@
 
     <div class="col-md-4">
       <ngx-review [appId]="appId" title="Grades overall" [value]="(totalRate/app.reviews.length) + '/5'"></ngx-review>
-      <ngx-review [appId]="appId" title="Grades today" [value]="(totalRate/app.reviews.length) + '/5'"></ngx-review>
+      <ngx-review [appId]="appId" title="Grades today" [value]="(todayRate/todayReview) + ((todayRate/todayReview) ? '/5' : '')"></ngx-review>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" style="margin-bottom: 1.875rem;">
       <ngx-ecommerce-charts [appId]="appId"></ngx-ecommerce-charts>
     </div>
 
     <div class="col-md-12">
-      <ngx-contacts title="Reviews list" [appId]="appId"></ngx-contacts>
+      <ngx-contacts title="Reviews list" [reviews]="app.reviews"></ngx-contacts>
     </div>
 
   </div>

@@ -70,7 +70,6 @@ import {CountryOrdersMapService} from '../@theme/components/country-orders/map/c
 import {GamesComponent} from './games/games.component';
 import {InAppPurchasesChartComponent} from '../@theme/components/in-app-purchases-chart/in-app-purchases-chart.component';
 import {AdMonetizationChartComponent} from '../@theme/components/ad-monetization-chart/ad-monetization-chart.component';
-import {TemplatesComponent} from './templates/templates.component';
 import {ReviewComponent} from '../@theme/components/review/review.component';
 
 
@@ -160,7 +159,6 @@ import {ReviewComponent} from '../@theme/components/review/review.component';
     GamesComponent,
     InAppPurchasesChartComponent,
     AdMonetizationChartComponent,
-    TemplatesComponent,
     ReviewComponent,
   ],
   providers: [

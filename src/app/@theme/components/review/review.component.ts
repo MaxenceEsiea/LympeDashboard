@@ -13,7 +13,5 @@ export class ReviewComponent {
   @Input('subtitle') subtitle;
   @Input('appId') appId;
 
-
-  constructor() {
-  }
+  constructor() {}
 }
