@@ -127,11 +127,12 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
       series: [
         this.getInnerLine(eTheme),
         this.getOuterLine(eTheme),
+        this.getSumLine(eTheme),
       ],
     };
   }
 
-  getOuterLine(eTheme) {
+  getSumLine(eTheme) {
     return {
       type: 'line',
       smooth: true,
@@ -163,18 +164,7 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
           shadowOffsetY: 12,
         },
       },
-      areaStyle: {
-        normal: {
-          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-            offset: 0,
-            color: eTheme.areaGradFrom,
-          }, {
-            offset: 1,
-            color: eTheme.areaGradTo,
-          }]),
-        },
-      },
-      data: this.chartData.outerLine.map(i => i.value),
+      data: this.chartData.outerLine.map((i, index) => i.value + this.chartData.innerLine[index]),
     };
   }
 
@@ -215,6 +205,46 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
         },
       },
       data: this.chartData.innerLine,
+    };
+  }
+
+  getOuterLine(eTheme) {
+    return {
+      type: 'line',
+      smooth: true,
+      symbolSize: 20,
+      tooltip: {
+        show: false,
+        extraCssText: '',
+      },
+      itemStyle: {
+        normal: {
+          opacity: 0,
+        },
+        emphasis: {
+          opacity: 0,
+        },
+      },
+      lineStyle: {
+        normal: {
+          width: eTheme.innerLineWidth,
+          type: eTheme.innerLineStyle,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1),
+        },
+      },
+      areaStyle: {
+        normal: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: eTheme.areaGradFrom,
+          }, {
+            offset: 1,
+            color: eTheme.areaGradTo,
+          }]),
+          opacity: 0.9,
+        },
+      },
+      data: this.chartData.outerLine.map(i => i.value),
     };
   }
 
