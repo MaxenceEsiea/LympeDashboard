@@ -2,34 +2,27 @@
   <div class="row">
     <div class="col-md-4">
       <ngx-review [appId]="appId" title="Total downloads" [value]="app.downloads"></ngx-review>
+      <ngx-review [appId]="appId" title="Today downloads" [value]="app.downloads"></ngx-review>
     </div>
 
     <div class=" col-md-4">
-      <ngx-kitten [app]="app"></ngx-kitten>
+      <ngx-kitten [app]="app" ></ngx-kitten>
     </div>
 
     <div class="col-md-4">
-      <ngx-review [appId]="appId" title="Grade" [value]="(totalRate/app.reviews.length) + '/5'"></ngx-review>
-      <ngx-earning-card ></ngx-earning-card>
+      <ngx-review [appId]="appId" title="Grades overall" [value]="(totalRate/app.reviews.length) + '/5'"></ngx-review>
+      <ngx-review [appId]="appId" title="Grades today" [value]="(totalRate/app.reviews.length) + '/5'"></ngx-review>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-xxxl-9 col-xl-12">
+    <div class="col-md-12">
       <ngx-ecommerce-charts [appId]="appId"></ngx-ecommerce-charts>
     </div>
 
-    <div class="col-xxxl-9 col-xl-12">
-      <ngx-electricity></ngx-electricity>
+    <div class="col-md-12">
+      <ngx-contacts title="Reviews list" [appId]="appId"></ngx-contacts>
     </div>
 
-    <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    </div>
-
-    <div class="col-xxxl-3 col-xxl-4 col-md-5">
-    </div>
-
-    <div class="col-xxxl-6 col-xxl-12 col-md-7">
-    </div>
   </div>
 </div>

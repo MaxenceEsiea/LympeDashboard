@@ -15,6 +15,7 @@ export class GamesComponent implements OnDestroy, OnInit {
   appId: number;
   app: any;
   totalRate = 0;
+  todayReview = 0;
 
   constructor(private themeService: NbThemeService,
               private solarService: SolarData,

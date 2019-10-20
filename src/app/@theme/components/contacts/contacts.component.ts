@@ -16,6 +16,8 @@ export class ContactsComponent implements OnDestroy {
 
   @Input('title') title;
   @Input('reviews') reviews;
+  @Input('appId') appId;
+
 
   constructor() {
   }
