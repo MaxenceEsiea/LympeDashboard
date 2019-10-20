@@ -1,0 +1,18 @@
+<nb-card size="giant">
+  <nb-tabset fullWidth>
+
+    <nb-tab tabTitle="{{title}}">
+      <nb-list>
+        <nb-list-item class="contact" *ngFor="let review of reviews">
+          <nb-user picture="assets/images/visitor.jpg" [name]="review.user" [title]="review.text" badgeStatus="info" [badgeText]="review.date" size="large"></nb-user>
+          <div style="cursor: pointer;" *ngIf="review.appId" routerLink="/pages/application/{{review.appId}}">
+            <img width="30" src="https://www.lympestudio.com/images/apps/{{review.appImage}}">
+            <span>  {{review.appTitle}}</span>
+          </div>
+          <span>{{review.rate}} <nb-icon icon="star" pack="eva"></nb-icon></span>
+        </nb-list-item>
+      </nb-list>
+    </nb-tab>
+
+  </nb-tabset>
+</nb-card>

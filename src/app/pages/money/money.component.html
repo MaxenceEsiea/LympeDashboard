@@ -1,0 +1,22 @@
+<div class="row">
+
+  <div class="col-md-4">
+    <app-card-number-info title="Today's money" [value]="todayMoney + ' €'"></app-card-number-info>
+  </div>
+
+  <div class="col-md-4">
+    <app-card-number-info title="Money evolution" [value]="'+16%'"></app-card-number-info>
+  </div>
+
+  <div class="col-md-4">
+    <app-card-number-info title="Total money" [value]="totalMoney + ' €'"></app-card-number-info>
+  </div>
+
+  <div class="col-md-12">
+    <app-lines-chart title="Money analytics" subtitle="All mobile games" [legends]="['In-app Purchases', 'Ad Monetization']" [chartData]="chartData"></app-lines-chart>
+  </div>
+
+  <div class="col-md-12" style="margin-bottom: 1.875rem;">
+    <app-bars-chart title="Money charts"></app-bars-chart>
+  </div>
+</div>

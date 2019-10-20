@@ -1,0 +1,18 @@
+<div class="row">
+
+  <div class="col-md-4">
+    <app-card-number-info title="Total reviews" [value]="reviews.length"></app-card-number-info>
+  </div>
+
+  <div class="col-md-4">
+    <app-card-number-info title="Overall grade" [value]="(totalRate/reviews.length) + '/5'"></app-card-number-info>
+  </div>
+
+  <div class="col-md-4">
+    <app-card-number-info title="Today's reviews" [value]="todayReview"></app-card-number-info>
+  </div>
+
+  <div class="col-md-12">
+    <app-reviews-list title="Reviews list" [reviews]="reviews"></app-reviews-list>
+  </div>
+</div>

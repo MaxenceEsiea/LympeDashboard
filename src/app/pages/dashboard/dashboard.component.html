@@ -1,30 +1,27 @@
 <div class="row">
-  <div class="col-xxxl-3 col-md-6">
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    <ngx-kitten *ngIf="app" [app]="app"></ngx-kitten>
-  </div>
-
-  <div class="col-xxxl-9 col-xxl-8 col-lg-7 col-md-6">
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xxxl-9 col-xl-12">
+  <div class="col-xxl-12">
+    <nb-card>
+      <nb-card-body>
+        <div class="progress-info">
+          <div class="h1 text-center m-0">{{ today | date:'dd/MM/yyyy à HH:mm:ss'}}</div>
+        </div>
+      </nb-card-body>
+    </nb-card>
   </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">
+  <div class="col-xxl-3">
+    <app-card-numbers-section period="today" title="Total today"></app-card-numbers-section>
   </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
+  <div class="col-xxl-3">
+    <app-card-numbers-section period="week" title="Total week"></app-card-numbers-section>
   </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-md-5">
+  <div class="col-xxl-3">
+    <app-card-numbers-section period="month" title="Total month"></app-card-numbers-section>
   </div>
 
-  <div class="col-xxxl-6 col-xxl-12 col-md-7">
+  <div class="col-xxl-3">
+    <app-card-numbers-section period="total" title="Total overall"></app-card-numbers-section>
   </div>
 </div>

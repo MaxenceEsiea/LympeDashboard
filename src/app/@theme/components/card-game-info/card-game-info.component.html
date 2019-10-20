@@ -1,0 +1,25 @@
+<nb-card size="medium">
+  <div class="picture" [style.backgroundImage]="'url(https://www.lympestudio.com/images/apps/' + app.picture + ')'"></div>
+
+  <div class="details">
+    <div class="h2">{{app.title}}</div>
+    <div class="update">
+      <p>Publish date: {{app.publish_date}}</p>
+    </div>
+    <div class="update">
+      <h4>Last update</h4>
+      <ul>
+        <li *ngFor="let new of app.news">{{new}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <nb-card-footer>
+    <a *ngIf="app.link_appstore" [href]="app.link_appstore" target="_blank">
+      <i class="link-icon ion-social-apple"></i>
+    </a>
+    <a *ngIf="app.link_playstore" [href]="app.link_playstore" target="_blank">
+      <i class="link-icon ion-social-android"></i>
+    </a>
+  </nb-card-footer>
+</nb-card>

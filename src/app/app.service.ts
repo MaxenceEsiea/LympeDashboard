@@ -18,4 +18,44 @@ export class AppService {
   public getAppById(id: number): Observable<any> {
     return this.http.get(this.api_url + '/apps/find/' + id);
   }
+
+  public getReviewsByAppId(id: number): Observable<any> {
+    return this.http.get(this.api_url + '/apps/reviews/' + id);
+  }
+
+  public getDownloadsByAppId(id: number): Observable<any> {
+    return this.http.get(this.api_url + '/apps/downloads/' + id);
+  }
+
+  public getSummary(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/summary');
+  }
+
+  public getInAppPurchases(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/inAppPurchases');
+  }
+
+  public getDownloadsChart(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/downloadsChart');
+  }
+
+  public getMoneyChart(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/moneyChart');
+  }
+
+  public getAdMonetization(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/adMonetization');
+  }
+
+  public getSummaryByAppId(id: number): Observable<any> {
+    return this.http.get(this.api_url + '/apps/summary/' + id);
+  }
+
+  public getDownloads(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/downloads');
+  }
+
+  public getProgressData(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/progress');
+  }
 }

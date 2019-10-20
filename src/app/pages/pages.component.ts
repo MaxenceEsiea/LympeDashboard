@@ -4,7 +4,7 @@ import { MENU_ITEMS } from './pages-menu';
 import {AppService} from '../app.service';
 
 @Component({
-  selector: 'ngx-pages',
+  selector: 'app-pages',
   styleUrls: ['pages.component.scss'],
   template: `
     <ngx-one-column-layout>
