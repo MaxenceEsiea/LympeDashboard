@@ -3,8 +3,8 @@
   <nb-card-header>{{title}}</nb-card-header>
 
   <nb-card-body>
-    <div class="h3 value">chiffre total</div>
-    <div class="details subtitle-2">+ ou -   % par rapport au jour davant</div>
+    <div class="h3 value">{{value}}</div>
+    <div *ngIf="subtitle" class="details subtitle-2">{{subtitle > 0 ? 'Better' : 'Less'}} than yesterday ({{subtitle}}%)</div>
   </nb-card-body>
 
 </nb-card>

@@ -1,19 +1,19 @@
 <div class="row">
 
   <div class="col-md-4">
-    <ngx-review [title]="'Total reviews'"></ngx-review>
+    <ngx-review title="Total reviews" [value]="reviews.length"></ngx-review>
   </div>
 
   <div class="col-md-4">
-    <ngx-review [title]="'Overall grade'"></ngx-review>
+    <ngx-review title="Overall grade" [value]="(totalRate/reviews.length) + '/5'"></ngx-review>
   </div>
 
   <div class="col-md-4">
-    <ngx-review [title]="'Today\'s reviews'"></ngx-review>
+    <ngx-review title="Today's reviews" [value]="todayReview"></ngx-review>
   </div>
 
 </div>
 
 <div>
-  <ngx-contacts [title]="'Reviews list'"></ngx-contacts>
+  <ngx-contacts title="Reviews list" [reviews]="reviews"></ngx-contacts>
 </div>

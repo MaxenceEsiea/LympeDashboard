@@ -4,12 +4,13 @@
   <div class="details">
     <div class="h2">{{app.title}}</div>
     <div class="update">
-      <p>Last update: 18/09/2019</p>
+      <p>Publish date: {{app.publish_date}}</p>
     </div>
     <div class="update">
-      <h4>Information</h4>
-      <p>New skins added</p>
-      <p>Bug fixed</p>
+      <h4>Last update</h4>
+      <ul>
+        <li *ngFor="let new of app.news">{{new}}</li>
+      </ul>
     </div>
   </div>
 

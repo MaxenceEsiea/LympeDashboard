@@ -3,6 +3,7 @@ import { takeWhile } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 
 import { Contacts, RecentUsers, UserData } from '../../../@core/data/users';
+import {AppService} from '../../../app.service';
 
 @Component({
   selector: 'ngx-contacts',
@@ -13,23 +14,10 @@ export class ContactsComponent implements OnDestroy {
 
   private alive = true;
 
-  contacts: any[];
-  recent: any[];
-
   @Input('title') title;
-  @Input('review-detail') reviewDetail;
-  @Input('review-grade') reviewGrade;
+  @Input('reviews') reviews;
 
-  constructor(private userService: UserData) {
-    forkJoin(
-      this.userService.getContacts(),
-      this.userService.getRecentUsers(),
-    )
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(([contacts, recent]: [Contacts[], RecentUsers[]]) => {
-        this.contacts = contacts;
-        this.recent = recent;
-      });
+  constructor() {
   }
 
   ngOnDestroy() {

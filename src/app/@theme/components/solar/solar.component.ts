@@ -1,6 +1,7 @@
 import { delay } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import {AppService} from '../../../app.service';
 
 declare const echarts: any;
 
@@ -16,6 +17,8 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
 
   @Input('title') title;
 
+  @Input('appId') appId;
+
   @Input('chartValue')
   set chartValue(value: number) {
     this.value = value;
@@ -30,7 +33,8 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
   option: any = {};
   themeSubscription: any;
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService,
+              private appService: AppService) {
   }
 
   ngAfterViewInit() {
