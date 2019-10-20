@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import {Component, Input, OnDestroy} from '@angular/core';
 import { ProgressInfo } from '../../../@core/data/stats-progress-bar';
 import {AppService} from '../../../app.service';
 
