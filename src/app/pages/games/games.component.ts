@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { SolarData } from '../../@core/data/solar';
 import {AppService} from '../../app.service';
@@ -14,6 +14,11 @@ export class GamesComponent implements OnDestroy, OnInit {
   private alive = true;
   appId: number;
   app: any;
+  totalRate = 0;
+  reviews = [];
+  downloads = [];
+
+
   constructor(private themeService: NbThemeService,
               private solarService: SolarData,
               private appService: AppService,

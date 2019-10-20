@@ -1,16 +1,15 @@
 <div *ngIf="app">
   <div class="row">
-    <div class="col-xxxl-3 col-md-6">
+    <div class="col-md-4">
+      <ngx-review [appId]="appId" title="Total downloads" [value]="downloads.length"></ngx-review>
     </div>
-  </div>
 
-  <div class="row">
-    <div class=" col-md-6">
+    <div class=" col-md-4">
       <ngx-kitten [app]="app"></ngx-kitten>
     </div>
 
-    <div class="col-md-6">
-      <ngx-solar [appId]="appId" [chartValue]="40" title="Grade"></ngx-solar>
+    <div class="col-md-4">
+      <ngx-review [appId]="appId" title="Grade" [value]="(totalRate/reviews.length) + '/5'"></ngx-review>
       <ngx-earning-card ></ngx-earning-card>
     </div>
   </div>
