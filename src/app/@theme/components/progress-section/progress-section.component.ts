@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import {Component, Input, OnDestroy} from '@angular/core';
 import { ProgressInfo } from '../../../@core/data/stats-progress-bar';
 import {AppService} from '../../../app.service';
 
@@ -12,6 +12,8 @@ export class ECommerceProgressSectionComponent implements OnDestroy {
   private alive = true;
 
   progressInfoData: ProgressInfo[];
+
+  @Input('title') title;
 
   constructor(private appService: AppService) {
     this.appService.getProgressData().subscribe((progressData) => {
