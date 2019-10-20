@@ -1,6 +1,5 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {NbThemeService} from '@nebular/theme';
-import {ProfitChart} from '../../../@core/data/profit-chart';
 import {AppService} from '../../../app.service';
 
 @Component({
@@ -10,7 +9,7 @@ import {AppService} from '../../../app.service';
 })
 export class InAppPurchasesChartComponent implements AfterViewInit {
 
-  chartData: ProfitChart;
+  chartData: any;
   options: any = {};
   chartLegend: any = [];
   period = 'week';

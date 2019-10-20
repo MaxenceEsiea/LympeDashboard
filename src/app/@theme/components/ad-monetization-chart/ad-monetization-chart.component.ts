@@ -1,5 +1,4 @@
 import {AfterViewInit, Component} from '@angular/core';
-import {ProfitChart} from '../../../@core/data/profit-chart';
 import {NbThemeService} from '@nebular/theme';
 import {AppService} from '../../../app.service';
 
@@ -10,7 +9,7 @@ import {AppService} from '../../../app.service';
 })
 export class AdMonetizationChartComponent implements AfterViewInit {
 
-  chartData: ProfitChart;
+  chartData: any;
   options: any = {};
   chartLegend: any = [];
   period = 'week';

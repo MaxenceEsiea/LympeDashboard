@@ -1,23 +1,17 @@
 <div class="row">
-
   <div class="col-md-4">
-    <ngx-review title="Today's downloads" [value]="todayDownloads"></ngx-review>
+    <app-card-number-info title="Today's downloads" [value]="todayDownloads"></app-card-number-info>
   </div>
 
   <div class="col-md-4">
-    <ngx-review title="Downloads evolution" [value]="'+25%'"></ngx-review>
+    <app-card-number-info title="Downloads evolution" [value]="'+25%'"></app-card-number-info>
   </div>
 
   <div class="col-md-4">
-    <ngx-review title="Total downloads" [value]="totalDownloads"></ngx-review>
+    <app-card-number-info title="Total downloads" [value]="totalDownloads"></app-card-number-info>
   </div>
-
-</div>
-
-<div class="row">
 
   <div class="col-md-12">
-    <ngx-ecommerce-visitors-analytics title="Downloads analytics" subtitle="All mobile games" [legends]="['Android', 'IOS']" [chartData]="chartData"></ngx-ecommerce-visitors-analytics>
+    <app-lines-chart title="Downloads analytics" subtitle="All mobile games" [legends]="['Android', 'IOS']" [chartData]="chartData"></app-lines-chart>
   </div>
-
 </div>

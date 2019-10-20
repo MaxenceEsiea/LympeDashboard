@@ -1,28 +1,23 @@
-<div *ngIf="app">
-  <div class="row">
-    <div class="col-md-4">
-      <ngx-review [appId]="appId" title="Total downloads" [value]="app.downloads"></ngx-review>
-      <ngx-review [appId]="appId" title="Today downloads" [value]="app.todayDownloads"></ngx-review>
-    </div>
-
-    <div class=" col-md-4">
-      <ngx-kitten [app]="app" ></ngx-kitten>
-    </div>
-
-    <div class="col-md-4">
-      <ngx-review [appId]="appId" title="Grades overall" [value]="(totalRate/app.reviews.length) + '/5'"></ngx-review>
-      <ngx-review [appId]="appId" title="Grades today" [value]="(todayRate/todayReview) + ((todayRate/todayReview) ? '/5' : '')"></ngx-review>
-    </div>
+<div class="row" *ngIf="app">
+  <div class="col-md-4">
+    <app-card-number-info [appId]="appId" title="Total downloads" [value]="app.downloads"></app-card-number-info>
+    <app-card-number-info [appId]="appId" title="Today downloads" [value]="app.todayDownloads"></app-card-number-info>
   </div>
 
-  <div class="row">
-    <div class="col-md-12" style="margin-bottom: 1.875rem;">
-      <ngx-ecommerce-charts [appId]="appId"></ngx-ecommerce-charts>
-    </div>
+  <div class=" col-md-4">
+    <app-card-game-info [app]="app"></app-card-game-info>
+  </div>
 
-    <div class="col-md-12">
-      <ngx-contacts title="Reviews list" [reviews]="app.reviews"></ngx-contacts>
-    </div>
+  <div class="col-md-4">
+    <app-card-number-info [appId]="appId" title="Grades overall" [value]="(totalRate/app.reviews.length) + '/5'"></app-card-number-info>
+    <app-card-number-info [appId]="appId" title="Grades today" [value]="(todayRate/todayReview) + ((todayRate/todayReview) ? '/5' : '')"></app-card-number-info>
+  </div>
 
+  <div class="col-md-12" style="margin-bottom: 1.875rem;">
+    <app-bars-chart [appId]="appId"></app-bars-chart>
+  </div>
+
+  <div class="col-md-12">
+    <app-reviews-list title="Reviews list" [reviews]="app.reviews"></app-reviews-list>
   </div>
 </div>

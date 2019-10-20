@@ -2,18 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import {AppService} from '../../app.service';
 
 @Component({
-  selector: 'ngx-downloads',
+  selector: 'app-downloads',
   templateUrl: './downloads.component.html',
   styleUrls: ['./downloads.component.scss'],
 })
 export class DownloadsComponent implements OnInit {
 
   apps: any[];
-  todayDownloads = 0;
-  totalDownloads = 0;
+  todayDownloads: number = 0;
+  totalDownloads: number = 0;
   chartData: any;
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService) {}
+
+  ngOnInit() {
     this.appService.getApps().subscribe((apps) => {
       this.apps = apps;
       this.apps.forEach(app => {
@@ -26,8 +28,4 @@ export class DownloadsComponent implements OnInit {
       this.chartData = datas;
     });
   }
-
-  ngOnInit() {
-  }
-
 }

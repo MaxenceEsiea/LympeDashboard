@@ -1,25 +1,22 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { SolarData } from '../../@core/data/solar';
 import {AppService} from '../../app.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'ngx-dashboard',
+  selector: 'app-games',
   styleUrls: ['./games.component.scss'],
   templateUrl: './games.component.html',
 })
-export class GamesComponent implements OnDestroy, OnInit {
+export class GamesComponent implements OnInit {
 
-  private alive = true;
   appId: number;
   app: any;
-  totalRate: any;
-  todayReview: any;
-  todayRate: any;
+  totalRate: number;
+  todayReview: number;
+  todayRate: number;
 
   constructor(private themeService: NbThemeService,
-              private solarService: SolarData,
               private appService: AppService,
               private route: ActivatedRoute) {}
 
@@ -44,9 +41,5 @@ export class GamesComponent implements OnDestroy, OnInit {
         });
       });
     });
-  }
-
-  ngOnDestroy() {
-    this.alive = false;
   }
 }

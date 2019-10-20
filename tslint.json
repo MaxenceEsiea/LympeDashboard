@@ -86,15 +86,15 @@
       "check-type"
     ],
     "directive-selector": [
-      true,
+      false,
       "attribute",
-      "ngx",
+      "app",
       "camelCase"
     ],
     "component-selector": [
-      true,
+      false,
       "element",
-      "ngx",
+      "app",
       "kebab-case"
     ],
     "ban": [

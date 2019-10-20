@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import {AppService} from '../../app.service';
 
 @Component({
-  selector: 'ngx-reviews',
+  selector: 'app-reviews',
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.scss']
 })
 export class ReviewsComponent implements OnInit {
 
-  reviews = [];
-  todayReview = 0;
-  totalRate = 0;
+  reviews: any[] = [];
+  todayReview: number = 0;
+  totalRate: number = 0;
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService) {}
+
+  ngOnInit() {
     const today = new Date();
     this.appService.getApps().subscribe((res) => {
       res.forEach(app => {
@@ -33,8 +35,4 @@ export class ReviewsComponent implements OnInit {
       });
     });
   }
-
-  ngOnInit() {
-  }
-
 }
