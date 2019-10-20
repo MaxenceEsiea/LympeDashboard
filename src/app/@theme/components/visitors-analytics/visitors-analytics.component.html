@@ -3,7 +3,7 @@
     <h3>Downloads analytics</h3>
     <div class="subtitle">All mobile games</div>
   </nb-card-header>
-  <nb-card-body>
+  <nb-card-body *ngIf="visitorsAnalyticsData" >
     <div class="chart-container">
       <div class="chart-header">
         <ngx-legend-chart [legendItems]="chartLegend"></ngx-legend-chart>

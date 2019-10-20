@@ -1,9 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
 import { NbThemeService } from '@nebular/theme';
-import { OutlineData, VisitorsAnalyticsData } from '../../../@core/data/visitors-analytics';
-import { forkJoin } from 'rxjs';
-
+import {AppService} from '../../../app.service';
 
 @Component({
   selector: 'ngx-ecommerce-visitors-analytics',
@@ -13,32 +11,20 @@ import { forkJoin } from 'rxjs';
 export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
   private alive = true;
 
-  pieChartValue: number;
   chartLegend: {iconColor: string; title: string}[];
-  visitorsAnalyticsData: { innerLine: number[]; outerLine: OutlineData[]; };
+  visitorsAnalyticsData: any;
 
   constructor(private themeService: NbThemeService,
-              private visitorsAnalyticsChartService: VisitorsAnalyticsData) {
+              private appService: AppService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
         this.setLegendItems(theme.variables.visitorsLegend);
       });
 
-    forkJoin(
-      this.visitorsAnalyticsChartService.getInnerLineChartData(),
-      this.visitorsAnalyticsChartService.getOutlineLineChartData(),
-      this.visitorsAnalyticsChartService.getPieChartData(),
-    )
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(([innerLine, outerLine, pieChartValue]: [number[], OutlineData[], number]) => {
-        this.visitorsAnalyticsData = {
-          innerLine: innerLine,
-          outerLine: outerLine,
-        };
-
-        this.pieChartValue = pieChartValue;
-      });
+    this.appService.getDownloadsChart().subscribe((datas) => {
+      this.visitorsAnalyticsData = datas;
+    });
   }
 
   setLegendItems(visitorsLegend): void {

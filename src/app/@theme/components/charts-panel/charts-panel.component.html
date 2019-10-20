@@ -1,21 +1,13 @@
-<nb-card size="large" *ngIf="chartPanelSummary && chartPanelSummary2">
+<nb-card size="large">
   <nb-tabset fullWidth>
-    <nb-tab tabTitle="In-App Purchases" [lazyLoad]="true">
+    <nb-tab tabTitle="In-App Purchases">
       <div class="chart-container">
-        <ngx-chart-panel-summary [summary]="chartPanelSummary"></ngx-chart-panel-summary>
-        <ngx-chart-panel-header [type]="period"
-                                (periodChange)="setPeriodAndGetChartData($event)">
-        </ngx-chart-panel-header>
-        <ngx-profit-chart #ordersChart [profitChartData]="ordersChartData"></ngx-profit-chart>
+        <ngx-in-app-purchases-chart></ngx-in-app-purchases-chart>
       </div>
     </nb-tab>
-    <nb-tab tabTitle="Ad Monetization" [lazyLoad]="true">
+    <nb-tab tabTitle="Ad Monetization">
       <div class="chart-container">
-        <ngx-chart-panel-summary [summary]="chartPanelSummary2"></ngx-chart-panel-summary>
-        <ngx-chart-panel-header [type]="period"
-                                (periodChange)="setPeriodAndGetChartData($event)">
-        </ngx-chart-panel-header>
-        <ngx-profit-chart #profitChart [profitChartData]="profitChartData"></ngx-profit-chart>
+        <ngx-ad-monetization-chart></ngx-ad-monetization-chart>
       </div>
     </nb-tab>
   </nb-tabset>

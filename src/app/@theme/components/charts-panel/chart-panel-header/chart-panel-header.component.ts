@@ -16,8 +16,9 @@ export class ChartPanelHeaderComponent implements OnDestroy {
 
   @Input() type: string = 'week';
 
+  @Input() chartLegend: any;
+
   types: string[] = ['week', 'month', 'year'];
-  chartLegend: {iconColor: string; title: string}[];
   breakpoint: NbMediaBreakpoint = { name: '', width: 0 };
   breakpoints: any;
   currentTheme: string;
@@ -27,10 +28,7 @@ export class ChartPanelHeaderComponent implements OnDestroy {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
-        const orderProfitLegend = theme.variables.orderProfitLegend;
-
         this.currentTheme = theme.name;
-        this.setLegendItems(orderProfitLegend);
       });
 
       this.breakpoints = this.breakpointService.getBreakpointsMap();
@@ -39,23 +37,6 @@ export class ChartPanelHeaderComponent implements OnDestroy {
         .subscribe(([oldValue, newValue]) => {
           this.breakpoint = newValue;
         });
-  }
-
-  setLegendItems(orderProfitLegend) {
-    this.chartLegend = [
-      {
-        iconColor: orderProfitLegend.firstItem,
-        title: 'Google AdMob',
-      },
-      {
-        iconColor: orderProfitLegend.secondItem,
-        title: 'Unity Ads',
-      },
-      {
-        iconColor: orderProfitLegend.thirdItem,
-        title: 'Others',
-      },
-    ];
   }
 
   changePeriod(period: string): void {

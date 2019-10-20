@@ -1,0 +1,5 @@
+<div *ngIf="chartData && chartLegend && options && chartPanelSummary">
+  <ngx-chart-panel-summary [summary]="chartPanelSummary"></ngx-chart-panel-summary>
+  <ngx-chart-panel-header [type]="period" (periodChange)="setPeriodAndGetChartData($event)" [chartLegend]="chartLegend"></ngx-chart-panel-header>
+  <ngx-profit-chart [profitChartData]="chartData" [options]="options"></ngx-profit-chart>
+</div>

@@ -31,6 +31,18 @@ export class AppService {
     return this.http.get(this.api_url + '/apps/summary');
   }
 
+  public getInAppPurchases(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/inAppPurchases');
+  }
+
+  public getDownloadsChart(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/downloadsChart');
+  }
+
+  public getAdMonetization(): Observable<any> {
+    return this.http.get(this.api_url + '/apps/adMonetization');
+  }
+
   public getSummaryByAppId(id: number): Observable<any> {
     return this.http.get(this.api_url + '/apps/summary/' + id);
   }
