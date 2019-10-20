@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import {Component, Input, OnDestroy} from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 
@@ -15,6 +15,10 @@ export class ContactsComponent implements OnDestroy {
 
   contacts: any[];
   recent: any[];
+
+  @Input('title') title;
+  @Input('review-detail') reviewDetail;
+  @Input('review-grade') reviewGrade;
 
   constructor(private userService: UserData) {
     forkJoin(

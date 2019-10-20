@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import {
-  NbActionsModule,
+  NbActionsModule, NbBadgeModule,
   NbButtonModule,
   NbCardModule, NbIconModule, NbListModule,
   NbMenuModule, NbProgressBarModule, NbRadioModule, NbSelectModule,
@@ -71,9 +71,7 @@ import {GamesComponent} from './games/games.component';
 import {InAppPurchasesChartComponent} from '../@theme/components/in-app-purchases-chart/in-app-purchases-chart.component';
 import {AdMonetizationChartComponent} from '../@theme/components/ad-monetization-chart/ad-monetization-chart.component';
 import {TemplatesComponent} from './templates/templates.component';
-import {ReviewTotalComponent} from '../@theme/components/review-total/review-total.component';
-import {ReviewGradeComponent} from '../@theme/components/review-grade/review-grade.component';
-import {ReviewTodayComponent} from '../@theme/components/review-today/review-today.component';
+import {ReviewComponent} from '../@theme/components/review/review.component';
 
 
 @NgModule({
@@ -105,6 +103,7 @@ import {ReviewTodayComponent} from '../@theme/components/review-today/review-tod
     NgxEchartsModule,
     NgxChartsModule,
     LeafletModule,
+    NbBadgeModule,
   ],
   declarations: [
     StatusCardComponent,
@@ -162,9 +161,7 @@ import {ReviewTodayComponent} from '../@theme/components/review-today/review-tod
     InAppPurchasesChartComponent,
     AdMonetizationChartComponent,
     TemplatesComponent,
-    ReviewTotalComponent,
-    ReviewGradeComponent,
-    ReviewTodayComponent,
+    ReviewComponent,
   ],
   providers: [
     CountryOrdersMapService,

@@ -5,12 +5,12 @@ import { NbThemeService } from '@nebular/theme';
 declare const echarts: any;
 
 @Component({
-  selector: 'ngx-review-grade',
-  styleUrls: ['./review-grade.component.scss'],
-  templateUrl: './review-grade.component.html',
+  selector: 'ngx-review',
+  styleUrls: ['./review.component.scss'],
+  templateUrl: './review.component.html',
 
 })
-export class ReviewGradeComponent implements AfterViewInit, OnDestroy {
+export class ReviewComponent implements AfterViewInit, OnDestroy {
 
   private value = 0;
 
