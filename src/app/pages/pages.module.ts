@@ -68,6 +68,10 @@ import {EarningLiveUpdateChartComponent} from '../@theme/components/earning-card
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {CountryOrdersMapService} from '../@theme/components/country-orders/map/country-orders-map.service';
 import {GamesComponent} from './games/games.component';
+import {InAppPurchasesChartComponent} from '../@theme/components/in-app-purchases-chart/in-app-purchases-chart.component';
+import {AdMonetizationChartComponent} from '../@theme/components/ad-monetization-chart/ad-monetization-chart.component';
+import {ReviewTotalComponent} from '../@theme/components/review-total/review-total.component';
+import {TemplatesComponent} from './templates/templates.component';
 
 
 @NgModule({
