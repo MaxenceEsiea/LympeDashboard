@@ -52,5 +52,8 @@ import { NewsService } from './news.service';
   providers: [
     NewsService,
   ],
+  exports: [
+    StepperComponent
+  ]
 })
 export class LayoutModule { }

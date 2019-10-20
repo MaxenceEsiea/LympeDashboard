@@ -5,12 +5,12 @@ import { NbThemeService } from '@nebular/theme';
 declare const echarts: any;
 
 @Component({
-  selector: 'ngx-solar',
-  styleUrls: ['./solar.component.scss'],
-  templateUrl: './solar.component.html',
+  selector: 'ngx-review-total',
+  styleUrls: ['./review-total.component.scss'],
+  templateUrl: './review-total.component.html',
 
 })
-export class SolarComponent implements AfterViewInit, OnDestroy {
+export class ReviewTotalComponent implements AfterViewInit, OnDestroy {
 
   private value = 0;
 

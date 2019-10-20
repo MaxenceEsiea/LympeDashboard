@@ -14,6 +14,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import {DownloadsComponent} from './downloads/downloads.component';
 import {MoneyComponent} from './money/money.component';
 import {ReviewsComponent} from './reviews/reviews.component';
+import {TemplatesComponent} from './templates/templates.component';
 import {FormsModule} from '@angular/forms';
 import {NgxEchartsModule} from 'ngx-echarts';
 import {StatusCardComponent} from '../@theme/components/status-card/status-card.component';
@@ -29,6 +30,7 @@ import {ElectricityChartComponent} from '../@theme/components/electricity/electr
 import {WeatherComponent} from '../@theme/components/weather/weather.component';
 import {PlayerComponent} from '../@theme/components/rooms/player/player.component';
 import {SolarComponent} from '../@theme/components/solar/solar.component';
+import {ReviewTotalComponent} from '../@theme/components/review-total/review-total.component';
 import {TrafficComponent} from '../@theme/components/traffic/traffic.component';
 import {TrafficChartComponent} from '../@theme/components/traffic/traffic-chart.component';
 import {ChartModule} from 'angular2-chartjs';
@@ -153,6 +155,8 @@ import {GamesComponent} from './games/games.component';
     ReviewsComponent,
     DashboardComponent,
     GamesComponent,
+    TemplatesComponent,
+    ReviewTotalComponent,
   ],
   providers: [
     CountryOrdersMapService,
